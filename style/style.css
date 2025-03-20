@@ -1,10 +1,11 @@
 html{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family:Verdana, Geneva, Tahoma, sans-serif
 }
 
 body{
     padding:0;
     margin:0;
+    scroll-behavior: smooth;
 }
 
 header{
@@ -12,7 +13,8 @@ header{
     display:grid;
     grid-auto-flow: column;
     color:white;
-    background-color:#73BB60;
+    background-color:#000;
+    height: 50px;
     padding:5px 30px;
     align-items:center;
     justify-content:space-between;
@@ -24,30 +26,83 @@ nav{
     column-gap: 40px;
 }
 
-#hero_image{
-    width:100%;
-    height:100vh;
-    object-fit:cover;
-    filter:blur(2px);
-    filter:brightness(50%);
+#topic_container{
+    display:grid;
+    grid-auto-flow: column;
+    background-image: linear-gradient(	#28430a, #95c22b);
+    color:#fff;
+    justify-content:space-between;
 }
 
-#hero_text{
-    position:absolute;
-    top:225px;
-    left: 50%;
-    transform: translateX(-50%);
-    color:white;
-    font-size:100px;
+footer{
+    background-color: #507b00;
+    color: #a7d930;
+    height: 200px;
+    padding: 5px 30px;
 }
 
-#hero_subtext{
-    position:absolute;
-    top:375px;
+#hero_container {
+    position: relative;
+    height: calc(100vh - 60px); /* Subtract header height so that image is not larger than actual vh */
+}
+
+#hero_content {
+    position: absolute; /* Ensure it's absolutely positioned within the container */
+    top: calc(50% - 60px);
     left: 50%;
-    transform: translateX(-50%);
-    color:white;
-    font-size:60px;
+    transform: translate(-50%, -50%);
+    color: white;
     text-align: center;
+    display: block; /* No need for flex here */
+}
+
+#hero_image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(2px);
+    filter: brightness(50%);
+}
+
+#hero_text {
+    font-size: 100px;
+    line-height: 0;
+}
+
+#hero_subtext {
+    color: white;
+    font-size: 40px;
     font-style: italic;
+    line-height: 0;
+}
+
+
+.topic_text{
+    font-size: 35px;
+    margin:0px 25px;
+    /* position: absolute;
+    left: 50%;
+    transform: translateX(-50%); */
+}
+
+.topic_subtext{
+    font-size: 20px;
+    text-align: left;
+    font-style:italic;
+    color:#a7d930;
+}
+
+.topic_infotext{
+    font-size: 20px;
+    text-align: left;
+    color:
+}
+
+.topic_image{
+    width:50vw;
+    height:100%;
+}
+
+.topic_image img{
+    object-fit:cover;
 }

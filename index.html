@@ -9,7 +9,7 @@
   <body>
     <header>
         <!-- Should be sticky and hide when scrolling down (header::hover) or change to more compact layout-->
-        <img src="placeholder.png" width="150" height="50">
+        <img src="logo_light.svg" height="50" alt="logo">
         <nav>
           <a>home</a>
           <a>about us</a>
@@ -17,17 +17,29 @@
         </nav>
     </header>
     <main>
-        <!-- Link to hero: https://images.pexels.com/photos/414807/pexels-photo-414807.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1 -->
-        <img src="https://images.pexels.com/photos/414807/pexels-photo-414807.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" id="hero_image">
-        <h1 id="hero_text">EcoTech</h1>
-        <h2 id="hero_subtext">Sustainable, blah blah blah</h2>
+        <section id="hero_container">
+          <!-- Link to hero: https://images.pexels.com/photos/414807/pexels-photo-414807.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1 --> <!-- Why tf is this here? -->
+          <img src="https://images.pexels.com/photos/414807/pexels-photo-414807.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Image of wind turbines" id="hero_image">
+          <div id="hero_content">
+            <h1 id="hero_text">EcoTech</h1>
+            <h2 id="hero_subtext">A Sustainable Future</h2>
+          </div>
+          </section>
+        <section id="topic_container">
+          <div class="topic_text">
+            <h2>Our Mission</h2> <!-- Is this section header good?  I was gonna keep the text to the side but idk. Oh okay, idk-->
+            <p class="topic_subtext">Sustainable, efficient energy for all!</p>
+            <p class="topic_infotext">We do really weird sustainable technological alternatives to other or more commonly used things like fossil fuels I think? Probably just mainly for cars...</p>
+          </div>
+          <div class="topic_image">
+            <img src="https://images.pexels.com/photos/4148472/pexels-photo-4148472.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="topic_image" alt="Image of solar panels">
+          </div>
+        </section>
       </main>
-    <aside>
-        <p>text - Mission statement</p>
-    </aside>
     <footer>
       <!-- Include web svgs for X / Twitter, Youtube, etc, links to other pages-->
         <p>I love text!!</p>
+        <img src="logo.svg" height="50" alt="logo">
     </footer>
   </body>
 </html>
