@@ -26,12 +26,9 @@ nav{
     column-gap: 40px;
 }
 
-#topic_container{
-    display:grid;
-    grid-auto-flow: column;
-    background-image: linear-gradient(	#28430a, #95c22b);
-    color:#fff;
-    justify-content:space-between;
+#topic_container::before{
+    background: inherit;
+    filter:blur(2px) brightness(50%);
 }
 
 footer{
@@ -44,9 +41,28 @@ footer{
 #hero_container {
     position: relative;
     height: calc(100vh - 60px); /* Subtract header height so that image is not larger than actual vh */
+    background: url("https://images.pexels.com/photos/414807/pexels-photo-414807.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
-#hero_content {
+#hero_container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("https://images.pexels.com/photos/414807/pexels-photo-414807.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"); /* Explicitly set background image */
+    background-size: cover;
+    background-position: center;
+    filter: blur(2px) brightness(50%);
+    z-index: -1; /* Make sure the overlay stays behind the content */
+}
+
+#hero_content { /* Removed */
     position: absolute; /* Ensure it's absolutely positioned within the container */
     top: calc(50% - 60px);
     left: 50%;
@@ -60,8 +76,6 @@ footer{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: blur(2px);
-    filter: brightness(50%);
 }
 
 #hero_text {
@@ -76,33 +90,72 @@ footer{
     line-height: 0;
 }
 
-
-.topic_text{
-    font-size: 35px;
-    margin:0px 25px;
-    /* position: absolute;
-    left: 50%;
-    transform: translateX(-50%); */
+#topic_container{
+    display:grid;
+    background-color:#507b00;
+    color:#fff;
+    text-align: center;
 }
 
-.topic_subtext{
-    font-size: 20px;
-    text-align: left;
-    font-style:italic;
-    color:#a7d930;
+#topic_container:nth-child(3){
+    background:#a7d930;
 }
 
-.topic_infotext{
-    font-size: 20px;
-    text-align: left;
-    color:
+#topic_heading{
+    display:flex;
+    justify-content: center;
+    gap:50%;
+    align-items: center;
 }
 
-.topic_image{
-    width:50vw;
-    height:100%;
+#topic_container p{
+    padding:0 10%;
 }
 
-.topic_image img{
-    object-fit:cover;
+#topic_images{
+    display:flex;
+    justify-content: center;
+}
+
+#topic_images img{
+    height:25vw;
+    background-color: #fff;
+    padding:5px;
+    
+}
+
+#topic_images img:nth-child(1){
+    padding-right: 0px;
+}
+
+@media screen and (max-width: 600px) {
+    #hero_text, #hero_subtext {
+      font-size: 100rem;
+    }
+}
+
+
+footer{
+    display:flex;
+    gap:10%;
+    background: ;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#footer_brand{
+    display:flex;
+    flex-flow:column;
+    gap:20px;
+}
+
+#footer_links{
+    display: flex;
+    gap:20px;
+    flex-flow: column;
+}
+
+#footer_social img{
+    width:35px;
+    padding:0px 15px;
 }
