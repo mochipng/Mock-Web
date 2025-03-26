@@ -10,6 +10,8 @@ body{
 
 header{
     position:sticky;
+    top:0;
+    z-index: 10;
     display:grid;
     grid-auto-flow: column;
     color:white;
@@ -41,7 +43,6 @@ footer{
 #hero_container {
     position: relative;
     height: calc(100vh - 60px); /* Subtract header height so that image is not larger than actual vh */
-    background: url("https://images.pexels.com/photos/414807/pexels-photo-414807.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") no-repeat center center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
