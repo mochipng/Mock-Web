@@ -52,14 +52,16 @@ footer{
 #hero_container::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
+    top: 0px;
+    left: 0px;
+    right: 0px;
     bottom: 0;
+    background : black;
+    overflow: hidden;
     background-image: url("https://images.pexels.com/photos/414807/pexels-photo-414807.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"); /* Explicitly set background image */
     background-size: cover;
     background-position: center;
-    filter: blur(2px) brightness(50%);
+    filter: brightness(50%); /* blur(2px) */
     z-index: -1; /* Make sure the overlay stays behind the content */
 }
 
@@ -82,6 +84,7 @@ footer{
 #hero_text {
     font-size: 100px;
     line-height: 0;
+    color: white;
 }
 
 #hero_subtext {
@@ -106,7 +109,7 @@ footer{
 #topic_heading{
     display:flex;
     justify-content: center;
-    gap:50%;
+    gap:35vw;
     align-items: center;
 }
 
@@ -121,19 +124,28 @@ footer{
 
 #topic_images img{
     height:25vw;
-    background-color: #fff;
-    padding:5px;
-    
-}
-
-#topic_images img:nth-child(1){
-    padding-right: 0px;
+    box-shadow: 0px 10px 20px 0px #28430a
 }
 
 @media screen and (max-width: 600px) {
-    #hero_text, #hero_subtext {
-      font-size: 100rem;
+    #topic_images {
+      flex-flow: column;
+      padding:0px 20px;
     }
+
+    #topic_images img{
+        object-fit: cover;
+    }
+
+    #topic_heading{
+        display:flex;
+        gap:0px;
+        justify-content: center;
+        flex-flow: column;
+        align-items: center;
+        padding-bottom: 30px;
+    }
+
 }
 
 
@@ -160,4 +172,13 @@ footer{
 #footer_social img{
     width:35px;
     padding:0px 15px;
+}
+
+.seperator{
+    width:100%;
+}
+
+.seperator:nth-child(2){
+    width:50%;
+    height:20px;
 }
